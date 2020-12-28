@@ -1,7 +1,7 @@
-# Typescript Template
+# @toes/logger
 
-This is a typescript template that contains the typescript configuration for most of our projects.
+A logger utility module made in typescript. This package currently includes:
 
-## License
-
-Feel free to use it in your own projects or commerically as this is a template.
+- AbstractLogger
+- ILogger
+- PrefixLogger

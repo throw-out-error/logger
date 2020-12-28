@@ -24,6 +24,9 @@
     ],
     "author": "Theo Paris",
     "license": "GPL-3.0-or-later",
+    "repository": {
+        "url": "https://github.com/throw-out-error/logger"
+    },
     "devDependencies": {
         "@types/chai": "4.2.14",
         "@types/mocha": "8.2.0",
