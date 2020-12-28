@@ -8,7 +8,11 @@ export type ILoggerWithSignature = {
 };
 
 export interface ILogger extends ILoggerWithSignature {
-    log<L extends string = LogLevel>(level: L, message?: unknown): void;
+    log<L extends string = LogLevel>(
+        level: L,
+        message?: unknown,
+        ...args: unknown[]
+    ): void;
 }
 
 export interface AbstractLoggerOptions {
@@ -18,19 +22,23 @@ export interface AbstractLoggerOptions {
 export abstract class AbstractLogger<
     O extends AbstractLoggerOptions = AbstractLoggerOptions
 > implements ILogger {
-    abstract debug(message?: unknown): void;
+    abstract debug(message?: unknown, ...args: unknown[]): void;
 
-    abstract error(message?: unknown): void;
+    abstract error(message?: unknown, ...args: unknown[]): void;
 
-    abstract info(message?: unknown): void;
+    abstract info(message?: unknown, ...args: unknown[]): void;
 
-    abstract trace(message?: unknown): void;
+    abstract trace(message?: unknown, ...args: unknown[]): void;
 
-    abstract warn(message?: unknown): void;
+    abstract warn(message?: unknown, ...args: unknown[]): void;
 
     protected constructor(public readonly opts: O) {}
 
-    log<L extends string = LogLevel>(level: L, message?: unknown): void {
-        return this[level as LogLevel](message);
+    log<L extends string = LogLevel>(
+        level: L,
+        message?: unknown,
+        ...args: unknown[]
+    ): void {
+        return this[level as LogLevel](message, ...args);
     }
 }

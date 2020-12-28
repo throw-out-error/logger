@@ -34,34 +34,43 @@ export class PrefixLogger extends AbstractLogger<PrefixLoggerOptions> {
         if (!opts.separator) opts.separator = " ";
     }
 
-    debug(message?: unknown): void {
+    debug(message?: unknown, ...args: unknown[]): void {
         return this.log("debug", message);
     }
 
-    error(message?: unknown): void {
+    error(message?: unknown, ...args: unknown[]): void {
         return this.log("error", message);
     }
 
-    info(message?: unknown): void {
+    info(message?: unknown, ...args: unknown[]): void {
         return this.log("info", message);
     }
 
-    trace(message?: unknown): void {
+    trace(message?: unknown, ...args: unknown[]): void {
         return this.log("trace", message);
     }
 
-    warn(message?: unknown): void {
+    warn(message?: unknown, ...args: unknown[]): void {
         return this.log("warn", message);
     }
 
-    log<L extends string = LogLevel>(level: L, message?: unknown): void {
+    log<L extends string = LogLevel>(
+        level: L,
+        message?: unknown,
+        ...args: unknown[]
+    ): void {
         return this.opts.base.log(
             `${this.opts.color ? colorLevel(level) : level}`,
-            `${this.opts.prefix}${this.opts.separator}${message}`
+            `${this.opts.prefix}${this.opts.separator}${message}`,
+            ...args
         );
     }
 
     extend(opts?: PrefixLoggerOptions): PrefixLogger {
-        return new PrefixLogger({ base: this, ...opts });
+        return new PrefixLogger({
+            separator: this.opts.separator,
+            base: this,
+            ...opts,
+        });
     }
 }
