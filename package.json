@@ -1,23 +1,26 @@
 {
-    "name": "@toes/typescript-template",
+    "name": "@toes/logger",
     "version": "0.0.1",
-    "description": "",
+    "description": "New logger module",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
         "build": "tsc --build",
-        "prepublishOnly": "pnpm run lint && pnpm run test && pnpm run build",
+        "prepublishOnly": "yarn run lint && yarn run test && yarn run build",
         "test": "ts-mocha test/**/*.ts",
         "lint": "eslint {src,test}/**/*.ts --quiet",
-        "lint:fix": "pnpm run lint -- --fix",
+        "lint:fix": "yarn run lint -- --fix",
         "coverage": "nyc ts-mocha test/**/*.ts"
+    },
+    "publishConfig": {
+        "access": "public"
     },
     "keywords": [
         "typescript",
         "node"
     ],
     "author": "Theo Paris",
-    "license": "UNLICENSE",
+    "license": "GPL-3.0-or-later",
     "devDependencies": {
         "@types/chai": "4.2.14",
         "@types/mocha": "8.2.0",
@@ -33,5 +36,11 @@
         "prettier": "2.2.1",
         "ts-mocha": "8.0.0",
         "typescript": "4.1.3"
+    },
+    "dependencies": {
+        "chalk": "^4.1.0"
+    },
+    "peerDependencies": {
+        "chalk": "^4.1.0"
     }
 }
