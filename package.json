@@ -12,6 +12,9 @@
         "lint:fix": "yarn run lint -- --fix",
         "coverage": "nyc ts-mocha test/**/*.ts"
     },
+    "files": [
+        "dist"
+    ],
     "publishConfig": {
         "access": "public"
     },
