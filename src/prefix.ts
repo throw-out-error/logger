@@ -4,7 +4,7 @@ import {
     ILogger,
     LogLevel,
 } from "./base";
-import chalk from "chalk";
+import * as chalk from "colorette";
 
 export interface PrefixLoggerOptions extends AbstractLoggerOptions {
     prefix: string;
@@ -21,7 +21,7 @@ export const colorLevel = (level: string): string => {
         case "debug":
             return chalk.blue(level);
         case "trace":
-            return chalk.grey(level);
+            return chalk.gray(level);
         case "error":
             return chalk.red(level);
     }
@@ -34,23 +34,23 @@ export class PrefixLogger extends AbstractLogger<PrefixLoggerOptions> {
         if (!opts.separator) opts.separator = " ";
     }
 
-    debug(message?: unknown, ...args: unknown[]): void {
+    debug(message?: unknown): void {
         return this.log("debug", message);
     }
 
-    error(message?: unknown, ...args: unknown[]): void {
+    error(message?: unknown): void {
         return this.log("error", message);
     }
 
-    info(message?: unknown, ...args: unknown[]): void {
+    info(message?: unknown): void {
         return this.log("info", message);
     }
 
-    trace(message?: unknown, ...args: unknown[]): void {
+    trace(message?: unknown): void {
         return this.log("trace", message);
     }
 
-    warn(message?: unknown, ...args: unknown[]): void {
+    warn(message?: unknown): void {
         return this.log("warn", message);
     }
 
