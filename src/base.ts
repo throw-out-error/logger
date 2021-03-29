@@ -7,6 +7,14 @@ export type ILoggerWithSignature = {
     ) => void;
 };
 
+export interface ILogInfo<L extends string = LogLevel> {
+    level: L;
+    prefix: string;
+    message: string;
+    args: unknown[];
+    children: ILogInfo[];
+}
+
 export interface ILogger extends ILoggerWithSignature {
     log<L extends string = LogLevel>(
         level: L,
@@ -19,9 +27,8 @@ export interface AbstractLoggerOptions {
     color?: boolean;
 }
 
-export abstract class AbstractLogger<
-    O extends AbstractLoggerOptions = AbstractLoggerOptions
-> implements ILogger {
+export abstract class AbstractLogger<O = AbstractLoggerOptions>
+    implements ILogger {
     abstract debug(message?: unknown, ...args: unknown[]): void;
 
     abstract error(message?: unknown, ...args: unknown[]): void;
