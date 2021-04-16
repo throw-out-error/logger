@@ -10,7 +10,7 @@ specifiers:
   colorette: ^1.2.2
   eslint: 7.17.0
   eslint-config-prettier: 7.1.0
-  eslint-plugin-prettier: 3.3.0
+  eslint-plugin-prettier: 3.4.0
   husky: ^5.2.0
   mocha: 8.2.1
   nyc: 15.1.0
@@ -30,7 +30,7 @@ devDependencies:
   chai: 4.2.0
   eslint: 7.17.0
   eslint-config-prettier: 7.1.0_eslint@7.17.0
-  eslint-plugin-prettier: 3.3.0_eslint@7.17.0+prettier@2.2.1
+  eslint-plugin-prettier: 3.4.0_69979e61f6e4e06807b16d761b81a74d
   husky: 5.2.0
   mocha: 8.2.1
   nyc: 15.1.0
@@ -844,19 +844,19 @@ packages:
       eslint: 7.17.0
     dev: true
 
-  /eslint-plugin-prettier/3.3.0_eslint@7.17.0+prettier@2.2.1:
-    resolution: {integrity: sha512-tMTwO8iUWlSRZIwS9k7/E4vrTsfvsrcM5p1eftyuqWH25nKsz/o6/54I7jwQ/3zobISyC7wMy9ZsFwgTxOcOpQ==}
+  /eslint-plugin-prettier/3.4.0_69979e61f6e4e06807b16d761b81a74d:
+    resolution: {integrity: sha512-UDK6rJT6INSfcOo545jiaOwB701uAIt2/dR7WnFQoGCVl1/EMqdANBmwUaqqQ45aXprsTGzSa39LI1PyuRBxxw==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
       eslint: '>=5.0.0'
-      eslint-plugin-prettier: '*'
+      eslint-config-prettier: '*'
       prettier: '>=1.13.0'
     peerDependenciesMeta:
-      eslint-plugin-prettier:
+      eslint-config-prettier:
         optional: true
     dependencies:
       eslint: 7.17.0
-      eslint-plugin-prettier: 3.3.0_eslint@7.17.0+prettier@2.2.1
+      eslint-config-prettier: 7.1.0_eslint@7.17.0
       prettier: 2.2.1
       prettier-linter-helpers: 1.0.0
     dev: true
