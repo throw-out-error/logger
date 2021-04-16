@@ -9,7 +9,7 @@ specifiers:
   chai: 4.2.0
   colorette: ^1.2.2
   eslint: 7.17.0
-  eslint-config-prettier: 7.1.0
+  eslint-config-prettier: 7.2.0
   eslint-plugin-prettier: 3.3.0
   husky: ^5.2.0
   mocha: 8.2.1
@@ -29,7 +29,7 @@ devDependencies:
   '@typescript-eslint/parser': 4.11.0_eslint@7.17.0+typescript@4.2.4
   chai: 4.2.0
   eslint: 7.17.0
-  eslint-config-prettier: 7.1.0_eslint@7.17.0
+  eslint-config-prettier: 7.2.0_eslint@7.17.0
   eslint-plugin-prettier: 3.3.0_eslint@7.17.0+prettier@2.2.1
   husky: 5.2.0
   mocha: 8.2.1
@@ -835,8 +835,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-prettier/7.1.0_eslint@7.17.0:
-    resolution: {integrity: sha512-9sm5/PxaFG7qNJvJzTROMM1Bk1ozXVTKI0buKOyb0Bsr1hrwi0H/TzxF/COtf1uxikIK8SwhX7K6zg78jAzbeA==}
+  /eslint-config-prettier/7.2.0_eslint@7.17.0:
+    resolution: {integrity: sha512-rV4Qu0C3nfJKPOAhFujFxB7RMP+URFyQqqOZW9DMRD7ZDTFyjaIlETU3xzHELt++4ugC0+Jm084HQYkkJe+Ivg==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
