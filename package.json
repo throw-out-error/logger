@@ -8,7 +8,7 @@
         "build": "tsc --build",
         "prepublishOnly": "pnpm run lint && pnpm run test && pnpm run build",
         "test": "hayspec test",
-        "lint": "eslint {src,t2est}/**/*.ts --fix",
+        "lint": "eslint {src,test}/**/*.ts --fix",
         "coverage": "nyc pnpm run test",
         "prepare": "husky install"
     },
