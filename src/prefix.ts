@@ -4,7 +4,7 @@ import {
     ILogger,
     LogLevel,
 } from "./base";
-import * as chalk from "colorette";
+import ansi from "ansi-styles";
 
 export interface PrefixLoggerOptions extends AbstractLoggerOptions {
     prefix: string;
@@ -15,15 +15,15 @@ export interface PrefixLoggerOptions extends AbstractLoggerOptions {
 export const colorLevel = (level: string): string => {
     switch (level) {
         case "warn":
-            return chalk.yellow(level);
+            return `${ansi.color.yellow}${level}`;
         case "info":
-            return chalk.green(level);
+            return `${ansi.color.green}${level}`;
         case "debug":
-            return chalk.blue(level);
+            return `${ansi.color.blue}${level}`;
         case "trace":
-            return chalk.gray(level);
+            return `${ansi.color.gray}${level}`;
         case "error":
-            return chalk.red(level);
+            return `${ansi.color.red}${level}`;
     }
 };
 
