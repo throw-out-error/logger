@@ -4,6 +4,7 @@ out
 build
 node_modules
 coverage
+.nyc_output
 
 # Logs
 *.log*

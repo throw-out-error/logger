@@ -1,0 +1,54 @@
+---
+root: true
+parser: "@typescript-eslint/parser"
+parserOptions:
+    ecmaVersion: 2020
+    sourceType: module
+    ecmaFeatures:
+        jsx: true
+env:
+    browser: true
+    commonjs: true
+    es6: true
+settings:
+    react:
+        version: detect
+    import/resolver:
+        node:
+            extensions:
+                - ".js"
+                - ".jsx"
+                - ".ts"
+                - ".tsx"
+extends:
+    - plugin:@typescript-eslint/recommended
+    - plugin:prettier/recommended
+    - plugin:import/errors
+    - plugin:import/warnings
+plugins:
+    - prettier
+    - "@typescript-eslint"
+    - import
+rules:
+    "@typescript-eslint/explicit-module-boundary-types": 0
+    curly:
+        - warn
+        - multi
+    quotes:
+        - 2
+        - double
+    import/order: error
+    import/no-unresolved:
+        - 2
+        - commonjs: true
+          amd: true
+overrides:
+    - files:
+          - "**/*.js"
+      excludedFiles:
+          - node_modules
+          - dist
+          - build
+      rules:
+          "@typescript-eslint/no-var-requires": "off"
+

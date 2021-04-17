@@ -1,10 +1,10 @@
+import color from "colorette";
 import {
     AbstractLogger,
     AbstractLoggerOptions,
     ILogger,
     LogLevel,
 } from "./base";
-import * as chalk from "colorette";
 
 export interface PrefixLoggerOptions extends AbstractLoggerOptions {
     prefix: string;
@@ -15,15 +15,15 @@ export interface PrefixLoggerOptions extends AbstractLoggerOptions {
 export const colorLevel = (level: string): string => {
     switch (level) {
         case "warn":
-            return chalk.yellow(level);
+            return color.yellow(level);
         case "info":
-            return chalk.green(level);
+            return color.green(level);
         case "debug":
-            return chalk.blue(level);
+            return color.blue(level);
         case "trace":
-            return chalk.gray(level);
+            return color.gray(level);
         case "error":
-            return chalk.red(level);
+            return color.red(level);
     }
 };
 
