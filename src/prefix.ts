@@ -24,11 +24,13 @@ export const colorLevel = (level: string): string => {
             return color.gray(level);
         case "error":
             return color.red(level);
+        default:
+            return "";
     }
 };
 
 export class PrefixLogger extends AbstractLogger<PrefixLoggerOptions> {
-    constructor(opts?: PrefixLoggerOptions) {
+    constructor(opts: PrefixLoggerOptions) {
         super(opts);
         if (!opts.base) opts.base = console;
         if (!opts.separator) opts.separator = " ";
@@ -55,15 +57,16 @@ export class PrefixLogger extends AbstractLogger<PrefixLoggerOptions> {
     }
 
     log<L extends string = LogLevel>(level: L, ...args: unknown[]): void {
-        return this.opts.base.log(
-            `${this.opts.color ? colorLevel(level) : level}`,
-            `${this.opts.prefix}${this.opts.separator}${args.join(" ")}`
+        return this.opts.base?.log(
+            `${this.opts.color ? colorLevel(level) : level}${
+                this.opts.separator
+            }${this.opts.prefix}${this.opts.separator}${args.join(" ")}`
         );
     }
 
-    extend(opts?: PrefixLoggerOptions): PrefixLogger {
+    extend(opts: PrefixLoggerOptions): PrefixLogger {
         return new PrefixLogger({
-            separator: this.opts.separator,
+            ...this.opts,
             base: this,
             ...opts,
         });
