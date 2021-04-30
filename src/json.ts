@@ -6,7 +6,7 @@ export interface JsonLoggerOptions {
 }
 
 export class JsonLogger extends AbstractLogger<JsonLoggerOptions> {
-    constructor(opts?: JsonLoggerOptions) {
+    constructor(opts: JsonLoggerOptions) {
         super(opts);
         if (!opts.base) opts.base = console;
     }
@@ -44,11 +44,12 @@ export class JsonLogger extends AbstractLogger<JsonLoggerOptions> {
             message:
                 typeof message === "string" ? message : JSON.stringify(message),
         };
-        return this.opts.base.log(JSON.stringify(info));
+        return this.opts.base?.log(JSON.stringify(info));
     }
 
-    extend(opts?: JsonLoggerOptions): JsonLogger {
+    extend(opts: JsonLoggerOptions): JsonLogger {
         return new JsonLogger({
+            ...this.opts,
             base: this,
             ...opts,
         });
