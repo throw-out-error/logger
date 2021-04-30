@@ -4,7 +4,18 @@
     "description": "New logger module",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
+    },
+    "husky": {
+        "hooks": {
+            "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+        }
+    },
     "scripts": {
+        "cm": "cz",
         "build": "tsc --build",
         "prepublishOnly": "pnpm run lint && pnpm run test && pnpm run build",
         "test": "hayspec test",

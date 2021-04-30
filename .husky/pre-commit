@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #!/bin/zsh
+=======
+#!/usr/bin/env zsh
+>>>>>>> 573ae23d90fac715370fc7a6e5397df5883141e9
 . "$(dirname "$0")/_/husky.sh"
 
 pnpm run lint
