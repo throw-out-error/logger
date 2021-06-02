@@ -2,8 +2,10 @@
     "name": "@toes/logger",
     "version": "0.0.3",
     "description": "New logger module",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
+    "main": "dist/cjs/index.js",
+    "exports": "./dist/esm/index.js",
+    "types": "dist/cjs/index.d.ts",
+    "type": "module",
     "config": {
         "commitizen": {
             "path": "cz-conventional-changelog"
@@ -16,7 +18,7 @@
     },
     "scripts": {
         "cm": "cz",
-        "build": "tsc --build",
+        "build": "tsc && tsc -p tsconfig.cjs.json",
         "prepublishOnly": "pnpm run lint && pnpm run test && pnpm run build",
         "test": "hayspec test",
         "lint": "eslint {src,test}/**/*.ts --fix",
@@ -54,8 +56,6 @@
         "@typescript-eslint/parser": "4.26.0",
         "eslint": "7.27.0",
         "eslint-config-prettier": "8.3.0",
-        "eslint-import-resolver-typescript": "2.4.0",
-        "eslint-plugin-import": "2.23.4",
         "eslint-plugin-prettier": "3.4.0",
         "husky": "6.0.0",
         "nyc": "15.1.0",

@@ -1,5 +1,5 @@
 import { Spec } from "@hayspec/spec";
-import { PrefixLogger } from "../src";
+import { PrefixLogger } from "../src/index.js";
 
 const spec = new Spec();
 

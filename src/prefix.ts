@@ -1,10 +1,10 @@
-import color from "colorette";
+import * as color from "colorette";
 import {
     AbstractLogger,
     AbstractLoggerOptions,
     ILogger,
     LogLevel,
-} from "./base";
+} from "./base.js";
 
 export interface PrefixLoggerOptions extends AbstractLoggerOptions {
     prefix: string;

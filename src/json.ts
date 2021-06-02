@@ -1,4 +1,4 @@
-import { AbstractLogger, ILogger, ILogInfo, LogLevel } from "./base";
+import { AbstractLogger, ILogger, ILogInfo, LogLevel } from "./base.js";
 
 export interface JsonLoggerOptions {
     prefix: string;

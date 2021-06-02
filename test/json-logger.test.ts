@@ -1,5 +1,5 @@
 import { Spec } from "@hayspec/spec";
-import { JsonLogger } from "../src";
+import { JsonLogger } from "../src/index.js";
 
 const spec = new Spec();
 
